@@ -21,7 +21,7 @@ if uploaded_file is not None:
          "image": encoded_image
          }
 
-    api_url = $URL
+    api_url = "https://detection2-5henc2c6ta-ew.a.run.app/predict"
     
     response = requests.post(api_url, json=payload)
 
