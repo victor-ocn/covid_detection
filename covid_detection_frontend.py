@@ -21,10 +21,8 @@ if uploaded_file is not None:
          "image": encoded_image
          }
 
-    api_url = "https://detection2-5henc2c6ta-ew.a.run.app/predict"
-    #"http://127.0.0.1:8000/predict/"
-#'https://detection2-5henc2c6ta-uc.a.run.app/predict'
-    #local:
+    api_url = $URL
+    
     response = requests.post(api_url, json=payload)
 
     if response.status_code == 200:
