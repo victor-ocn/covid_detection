@@ -1,12 +1,1 @@
-numpy
-Python-IO
-pillow
-pybase64
-#google-cloud-storage
-tensorflow==2.15.0
-#API
-fastapi
-uvicorn
-#HTTP
-httpx
-pytest-asyncio
+matplotlib
