@@ -47,4 +47,6 @@ else:
 
             fig = plt.bar(list(df.keys()), list(df.values[0]))
             st.pyplot(fig)
+    else:
+        st.error("Failed to send the image. Try again later.")
             
