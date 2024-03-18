@@ -30,7 +30,7 @@ if user_menu == 'Predict':
             "image": encoded_image
             }
 
-        api_url = os.getenv('URL')#"https://detection2-5henc2c6ta-ew.a.run.app/predict"
+        api_url = os.getenv('URL')
 
         response = requests.post(api_url, json=payload)
 
@@ -67,14 +67,15 @@ if user_menu == 'About us':
 
     st.markdown("#### Components:")
 
-    col1,col2, col3, col4 = st.columns(4)
-    with col1:
-        st.write('teste')
-        st.image('pictures/thaina_castro.jpg', width=100)
-    with col2:
-        st.image('pictures/victor_ferreira.jpeg', width=100)
+    col1, col2, col3, col4 = st.columns(4)
+    cols=[col1, col2, col3, col4]
 
-    for names in os.listdir('pictures'):
-        name_list = names[:names.find('.')].split('_')
+    names = os.listdir('pictures')
+
+    for i in range(len(names)):
+
+        name_list = names[i][:names[i].find('.')].split('_')
         name_lastname = f"{name_list[0].capitalize()} {name_list[1].capitalize()}"
-        st.image(f"pictures/{names}", width=100, caption=f"{name_lastname}")
+
+        with cols[i]:
+            st.image(f"pictures/{names[i]}", width=150, caption=f"{name_lastname}")
