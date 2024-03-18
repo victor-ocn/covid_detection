@@ -30,7 +30,7 @@ if user_menu == 'Predict':
             "image": encoded_image
             }
 
-        api_url = "https://detection2-5henc2c6ta-ew.a.run.app/predict"
+        api_url = os.getenv('URL')#"https://detection2-5henc2c6ta-ew.a.run.app/predict"
 
         response = requests.post(api_url, json=payload)
 
