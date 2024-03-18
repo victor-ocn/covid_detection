@@ -62,6 +62,7 @@ if user_menu == 'About our project':
 
     text = read_markdown_file('README.md')
     st.markdown(text)
+    st.image('accuracy.png')
 
 if user_menu == 'About us':
 
