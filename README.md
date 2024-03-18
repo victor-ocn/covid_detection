@@ -24,12 +24,7 @@ In order to increase this data, we take some other x-ray images for COVID and Pn
 - 4,763 Viral Pneumonia images.
 
 The COVID-19 detection app utilizes a convolutional model to identify patterns in X-ray images. This robust dataset, combined with advanced machine learning techniques, enables the app to deliver reliable and accurate results in the detection of COVID-19.
-<<<<<<< HEAD
-=======
 
-!['model performance'](/accuracy.png)
-
->>>>>>> a4ac0b061d2af628f6b0438422077c54dd2a4c67
 The app has the potential to be a valuable tool in the global fight against the pandemic.
 
 !['model performance'](/accuracy.png)
