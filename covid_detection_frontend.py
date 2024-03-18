@@ -45,9 +45,11 @@ else:
                               index = ['Probability'])
 
             st.write(df)
-
-            fig = plt.bar(list(df.keys()), list(df.values[0]))
-            st.pyplot(fig)
+            
+            fig, ax = plt.subplots(1,1, figsize=(5, 55))
+            ax.bar(list(df.keys()), list(df.values[0]))
+            st.pyplot(fig=fig)
+          
     else:
         st.error("Failed to send the image. Try again later.")
             
