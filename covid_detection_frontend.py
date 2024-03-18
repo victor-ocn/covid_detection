@@ -1,3 +1,4 @@
+import os
 import base64
 import requests
 from io import StringIO
@@ -26,7 +27,7 @@ else:
          "image": encoded_image
          }
 
-    api_url = "https://detection2-5henc2c6ta-ew.a.run.app/predict"
+    api_url = os.getenv('URL')
 
     response = requests.post(api_url, json=payload)
 
