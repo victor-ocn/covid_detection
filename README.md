@@ -23,8 +23,32 @@ In order to increase this data, we take some other x-ray images for COVID and Pn
 - 6,012 Lung Opacity images;
 - 4,763 Viral Pneumonia images.
 
-The COVID-19 detection app utilizes a convolutional model to identify patterns in X-ray images. This robust dataset, combined with advanced machine learning techniques, enables the app to deliver reliable and accurate results in the detection of COVID-19.
+The COVID-19 detection app utilizes a Convolutional Neural Network (CNN) model to identify patterns in X-ray images.
 
-The app has the potential to be a valuable tool in the global fight against the pandemic.
+```
+model = Sequential()
+    model.add(Rescaling(1./255, input_shape=input_shape))
+
+    model.add(layers.Conv2D(32, kernel_size=(3,3), padding='same', activation='relu'))
+    model.add(layers.MaxPooling2D(2,2))
+    model.add(layers.Dropout(0.2))
+
+    model.add(layers.Conv2D(64, kernel_size=(3,3), padding='same', activation="relu"))
+    model.add(layers.MaxPooling2D(2,2))
+    model.add(layers.Dropout(0.2))
+
+    model.add(layers.Conv2D(128, kernel_size=(3,3), padding='same', activation="relu"))
+    model.add(layers.MaxPooling2D(2))
+    model.add(layers.Dropout(0.2))
+
+    model.add(layers.Flatten())
+
+    model.add(layers.Dense(128, activation='relu'))
+    model.add(layers.BatchNormalization())
+    model.add(layers.Dropout(0.5))
+
+    model.add(layers.Dense(4, activation='softmax'))
+```
+This robust dataset, combined with advanced deep learning techniques, enables the app to deliver reliable and accurate results in the detection of COVID-19.
 
 You can try DetectionApp [here](https://coviddetection-a8h898awmch9rtpddcrkpc.streamlit.app/)
